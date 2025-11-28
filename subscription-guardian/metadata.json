@@ -1,0 +1,5 @@
+{
+  "name": "Subscription Guardian",
+  "description": "A proactive personal finance tool using AI to detect, manage, and optimize recurring expenses.",
+  "requestFramePermissions": []
+}

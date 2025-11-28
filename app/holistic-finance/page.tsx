@@ -96,20 +96,24 @@ export default function HolisticFinancePage() {
             Experience the future of personal finance management with AI-powered insights.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              className="bg-linear-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg hover:shadow-emerald-500/25 transition-all"
-            >
-              Launch App
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-zinc-700 text-zinc-300 hover:bg-zinc-800"
-            >
-              View Demo
-            </Button>
+            <a href="https://holistic-finance-ai-1.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <Button 
+                size="lg"
+                className="bg-linear-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg hover:shadow-emerald-500/25 transition-all"
+              >
+                Launch App
+                <ExternalLink className="w-4 h-4 ml-2" />
+              </Button>
+            </a>
+            <Link href="/holistic-finance/demo">
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-zinc-700 text-zinc-300 hover:bg-zinc-800"
+              >
+                View Demo
+              </Button>
+            </Link>
           </div>
         </div>
       </main>

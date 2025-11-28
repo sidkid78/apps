@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -60,7 +61,7 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-950 text-white overflow-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900 via-zinc-950 to-black" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-zinc-900 via-zinc-950 to-black" />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
         {/* Grid pattern */}
@@ -83,7 +84,7 @@ export default function Home() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            <span className="bg-gradient-to-r from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
               My Apps
             </span>
           </h1>
@@ -96,15 +97,15 @@ export default function Home() {
           {/* Stats */}
           <div className="flex justify-center gap-12 pt-8">
             <div className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">2</div>
+              <div className="text-3xl font-bold bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">2</div>
               <div className="text-sm text-zinc-500 font-medium">Applications</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">AI</div>
+              <div className="text-3xl font-bold bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">AI</div>
               <div className="text-sm text-zinc-500 font-medium">Powered</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">∞</div>
+              <div className="text-3xl font-bold bg-linear-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">∞</div>
               <div className="text-sm text-zinc-500 font-medium">Possibilities</div>
             </div>
           </div>
@@ -121,10 +122,10 @@ export default function Home() {
               }}
             >
               {/* Gradient overlay on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${app.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className={`absolute inset-0 bg-linear-to-br ${app.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
               {/* Top accent line */}
-              <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${app.gradient} opacity-50`} />
+              <div className={`absolute top-0 left-0 right-0 h-px bg-linear-to-r ${app.gradient} opacity-50`} />
 
               <CardHeader className="relative space-y-4 pb-4">
                 <div className="flex items-start justify-between">
@@ -144,11 +145,11 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-2">
-                  <CardTitle className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text transition-all duration-300" 
+                  <CardTitle className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-linear-to-r group-hover:bg-clip-text transition-all duration-300" 
                     style={{ backgroundImage: `linear-gradient(to right, white, var(--tw-gradient-stops))` }}>
                     {app.name}
                   </CardTitle>
-                  <p className={`text-sm font-medium bg-gradient-to-r ${app.gradient} bg-clip-text text-transparent`}>
+                  <p className={`text-sm font-medium bg-linear-to-r ${app.gradient} bg-clip-text text-transparent`}>
                     {app.tagline}
                   </p>
                 </div>
@@ -186,17 +187,19 @@ export default function Home() {
                 </div>
 
                 {/* CTA Button */}
-                <Button 
-                  className={`w-full bg-gradient-to-r ${app.gradient} text-white border-0 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] group/btn`}
-                  size="lg"
-                >
-                  <span>Explore App</span>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                </Button>
+                <Link href={app.href} className="block">
+                  <Button 
+                    className={`w-full bg-linear-to-r ${app.gradient} text-white border-0 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] group/btn`}
+                    size="lg"
+                  >
+                    <span>Explore App</span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                  </Button>
+                </Link>
               </CardContent>
 
               {/* Corner decoration */}
-              <div className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${app.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+              <div className={`absolute -bottom-20 -right-20 w-40 h-40 bg-linear-to-br ${app.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
             </Card>
           ))}
         </div>
@@ -205,9 +208,9 @@ export default function Home() {
         <section className="mt-24 text-center space-y-6">
           <div className="inline-flex flex-col items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+              <div className="w-12 h-px bg-linear-to-r from-transparent via-zinc-700 to-transparent" />
               <Sparkles className="w-5 h-5 text-zinc-600" />
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+              <div className="w-12 h-px bg-linear-to-r from-transparent via-zinc-700 to-transparent" />
             </div>
             <p className="text-zinc-500 text-sm">
               More apps coming soon. Building the future of personal finance.

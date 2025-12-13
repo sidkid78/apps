@@ -4,17 +4,21 @@ import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  TrendingUp, 
-  Shield, 
-  Sparkles, 
-  ArrowRight, 
+import {
+  TrendingUp,
+  Shield,
+  Sparkles,
+  ArrowRight,
   Brain,
   PiggyBank,
   Bell,
   ChartLine,
   Wallet,
-  Target
+  Target,
+  Wrench,
+  Mic,
+  FileText,
+  MapPin
 } from "lucide-react";
 
 const apps = [
@@ -54,6 +58,24 @@ const apps = [
     href: "/subscription-guardian",
     status: "Live",
   },
+  {
+    id: "listen-fix",
+    name: "Listen & Fix DIY",
+    tagline: "Shazam for Engines & Appliances",
+    description: "An AI-powered DIY repair assistant that analyzes audio/video/images of broken equipment, diagnoses issues, and generates custom step-by-step repair guides.",
+    gradient: "from-orange-500 via-amber-500 to-yellow-500",
+    bgGradient: "from-orange-500/10 via-amber-500/5 to-transparent",
+    iconBg: "bg-gradient-to-br from-orange-500 to-amber-600",
+    icon: Wrench,
+    features: [
+      { icon: Mic, label: "Audio Analysis" },
+      { icon: FileText, label: "Repair Guides" },
+      { icon: MapPin, label: "Local Parts" },
+    ],
+    badges: ["Gemini 2.5", "Multimodal", "RAG"],
+    href: "/listen-fix",
+    status: "Live",
+  },
 ];
 
 export default function Home() {
@@ -65,7 +87,7 @@ export default function Home() {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
         {/* Grid pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
@@ -82,22 +104,22 @@ export default function Home() {
             <Sparkles className="w-4 h-4 text-amber-400" />
             <span className="text-sm text-zinc-400 font-medium tracking-wide">AI-Powered Applications</span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             <span className="bg-linear-to-r from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
               My Apps
             </span>
           </h1>
-          
+
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-light">
-            Crafting intelligent solutions for modern finance. 
+            Crafting intelligent solutions for modern finance.
             <span className="text-zinc-300"> Built with AI at the core.</span>
           </p>
 
           {/* Stats */}
           <div className="flex justify-center gap-12 pt-8">
             <div className="text-center">
-              <div className="text-3xl font-bold bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">2</div>
+              <div className="text-3xl font-bold bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">3</div>
               <div className="text-sm text-zinc-500 font-medium">Applications</div>
             </div>
             <div className="text-center">
@@ -123,7 +145,7 @@ export default function Home() {
             >
               {/* Gradient overlay on hover */}
               <div className={`absolute inset-0 bg-linear-to-br ${app.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
+
               {/* Top accent line */}
               <div className={`absolute top-0 left-0 right-0 h-px bg-linear-to-r ${app.gradient} opacity-50`} />
 
@@ -133,10 +155,10 @@ export default function Home() {
                   <div className={`${app.iconBg} p-4 rounded-2xl shadow-lg shadow-${app.gradient.split('-')[1]}-500/20 transition-transform duration-300 group-hover:scale-110`}>
                     <app.icon className="w-8 h-8 text-white" />
                   </div>
-                  
+
                   {/* Status badge */}
-                  <Badge 
-                    variant="outline" 
+                  <Badge
+                    variant="outline"
                     className="border-emerald-500/30 text-emerald-400 bg-emerald-500/10"
                   >
                     <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-1.5 animate-pulse" />
@@ -145,7 +167,7 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-2">
-                  <CardTitle className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-linear-to-r group-hover:bg-clip-text transition-all duration-300" 
+                  <CardTitle className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-linear-to-r group-hover:bg-clip-text transition-all duration-300"
                     style={{ backgroundImage: `linear-gradient(to right, white, var(--tw-gradient-stops))` }}>
                     {app.name}
                   </CardTitle>
@@ -163,7 +185,7 @@ export default function Home() {
                 {/* Features */}
                 <div className="grid grid-cols-3 gap-3">
                   {app.features.map((feature, i) => (
-                    <div 
+                    <div
                       key={i}
                       className="flex flex-col items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/5 transition-colors duration-300 hover:bg-white/10"
                     >
@@ -176,8 +198,8 @@ export default function Home() {
                 {/* Tech badges */}
                 <div className="flex flex-wrap gap-2">
                   {app.badges.map((badge, i) => (
-                    <Badge 
-                      key={i} 
+                    <Badge
+                      key={i}
                       variant="secondary"
                       className="bg-zinc-800/50 text-zinc-400 border-zinc-700/50 hover:bg-zinc-700/50 transition-colors"
                     >
@@ -188,7 +210,7 @@ export default function Home() {
 
                 {/* CTA Button */}
                 <Link href={app.href} className="block">
-                  <Button 
+                  <Button
                     className={`w-full bg-linear-to-r ${app.gradient} text-white border-0 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] group/btn`}
                     size="lg"
                   >

@@ -18,7 +18,11 @@ import {
   Wrench,
   Mic,
   FileText,
-  MapPin
+  MapPin,
+  PartyPopper,
+  Users,
+  Gift,
+  Calendar
 } from "lucide-react";
 
 const apps = [
@@ -76,6 +80,24 @@ const apps = [
     href: "/listen-fix",
     status: "Live",
   },
+  {
+    id: "passy",
+    name: "Passy Party Planner",
+    tagline: "Plan the Perfect Baby Shower",
+    description: "An AI-powered baby shower planning assistant. Manage guests, brainstorm themes, plan games, track budgets, and generate personalized thank you notes.",
+    gradient: "from-pink-500 via-rose-500 to-red-400",
+    bgGradient: "from-pink-500/10 via-rose-500/5 to-transparent",
+    iconBg: "bg-gradient-to-br from-pink-500 to-rose-600",
+    icon: PartyPopper,
+    features: [
+      { icon: Users, label: "Guest Manager" },
+      { icon: Calendar, label: "Event Planner" },
+      { icon: Gift, label: "Registry" },
+    ],
+    badges: ["Gemini AI", "Firebase", "Next.js"],
+    href: "https://passy-phi.vercel.app/",
+    status: "Live",
+  },
 ];
 
 export default function Home() {
@@ -112,14 +134,14 @@ export default function Home() {
           </h1>
 
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-light">
-            Crafting intelligent solutions for modern finance.
+            Crafting intelligent solutions for modern finance and more.
             <span className="text-zinc-300"> Built with AI at the core.</span>
           </p>
 
           {/* Stats */}
           <div className="flex justify-center gap-12 pt-8">
             <div className="text-center">
-              <div className="text-3xl font-bold bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">3</div>
+              <div className="text-3xl font-bold bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">4</div>
               <div className="text-sm text-zinc-500 font-medium">Applications</div>
             </div>
             <div className="text-center">
@@ -235,7 +257,7 @@ export default function Home() {
               <div className="w-12 h-px bg-linear-to-r from-transparent via-zinc-700 to-transparent" />
             </div>
             <p className="text-zinc-500 text-sm">
-              More apps coming soon. Building the future of personal finance.
+              More apps coming soon.
             </p>
           </div>
         </section>

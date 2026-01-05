@@ -78,6 +78,7 @@ const apps = [
     ],
     badges: ["Gemini 2.5", "Multimodal", "RAG"],
     href: "/listen-fix",
+    landingPage: "/listen-and-fix.html",
     status: "Live",
   },
   {
@@ -230,16 +231,29 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* CTA Button */}
-                <Link href={app.href} className="block">
-                  <Button
-                    className={`w-full bg-linear-to-r ${app.gradient} text-white border-0 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] group/btn`}
-                    size="lg"
-                  >
-                    <span>Explore App</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                  </Button>
-                </Link>
+                {/* CTA Buttons */}
+                <div className={`flex gap-3 ${app.landingPage ? '' : ''}`}>
+                  <Link href={app.href} className="flex-1">
+                    <Button
+                      className={`w-full bg-linear-to-r ${app.gradient} text-white border-0 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] group/btn`}
+                      size="lg"
+                    >
+                      <span>Explore App</span>
+                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    </Button>
+                  </Link>
+                  {app.landingPage && (
+                    <Link href={app.landingPage} className="shrink-0">
+                      <Button
+                        variant="outline"
+                        className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white transition-all duration-300"
+                        size="lg"
+                      >
+                        Learn More
+                      </Button>
+                    </Link>
+                  )}
+                </div>
               </CardContent>
 
               {/* Corner decoration */}

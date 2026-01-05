@@ -60,6 +60,7 @@ const apps = [
     ],
     badges: ["AI Detection", "Bank Sync", "Analytics"],
     href: "/subscription-guardian",
+    landingPage: "/gaurdian.html",
     status: "Live",
   },
   {
@@ -97,6 +98,7 @@ const apps = [
     ],
     badges: ["Gemini AI", "Firebase", "Next.js"],
     href: "https://passy-phi.vercel.app/",
+    landingPage: "/passy.html",
     status: "Live",
   },
 ];

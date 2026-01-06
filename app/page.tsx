@@ -42,6 +42,7 @@ const apps = [
     ],
     badges: ["Gemini 2.0", "Plaid API", "Real-time"],
     href: "/holistic-finance",
+    landingPage: "/holistic-ai.html",
     status: "Live",
   },
   {

@@ -1,4 +1,4 @@
-# My Apps Portfolio
+v# My Apps Portfolio
 
 A showcase of AI-powered financial applications built with modern web technologies.
 

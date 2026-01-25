@@ -102,6 +102,25 @@ const apps = [
     landingPage: "/passy.html",
     status: "Live",
   },
+  {
+    id: "care-sync",
+    name: "Care-Sync",
+    tagline: "AI-Powered Family Care Platform",
+    description: "A comprehensive family care AI platform featuring a dashboard, doctor digest summaries, medication scanner, and secure encrypted vault.",
+    gradient: "from-blue-500 via-indigo-500 to-violet-500",
+    bgGradient: "from-blue-500/10 via-indigo-500/5 to-transparent",
+    iconBg: "bg-gradient-to-br from-blue-500 to-indigo-600",
+    icon: Shield,
+    features: [
+      { icon: Mic, label: "Doctor Digest" },
+      { icon: Bell, label: "Medication Scanner" },
+      { icon: Shield, label: "Secure Vault" },
+    ],
+    badges: ["Gemini Vision", "React", "Serverless"],
+    href: "https://care-async.vercel.app",
+    landingPage: "",
+    status: "New",
+  },
 ];
 
 export default function Home() {
